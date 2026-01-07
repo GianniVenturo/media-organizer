@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+*.egg-info/
+dist/
+build/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Project specific
+logs/*.log
+data/cache/*
+data/queue/*
+!data/cache/.gitkeep
+!data/queue/.gitkeep
+*.db
+*.sqlite
+*.sqlite3
+config/secrets.yaml
+
+# OS
+.DS_Store
+Thumbs.db

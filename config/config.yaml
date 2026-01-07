@@ -1,0 +1,65 @@
+# Media Organizer Configuration
+
+# Application settings
+app:
+  name: "Media Organizer"
+  version: "1.0.0"
+  log_level: "INFO"
+
+# Paths
+paths:
+  input_folder: "/mnt/media/input"  # Da configurare in base alle tue esigenze
+  output_folder: "/mnt/media/output"  # Da configurare in base alle tue esigenze
+  cache_folder: "./data/cache"
+  models_folder: "./data/models"
+  queue_folder: "./data/queue"
+  log_folder: "./logs"
+  database: "./data/media_organizer.db"
+
+# Fingerprinting
+fingerprinting:
+  audio:
+    enabled: true
+    use_chromaprint: true
+    use_acoustid: true
+    extract_features: true
+  video:
+    enabled: true
+    extract_scenes: true
+    thumbnail_count: 3
+
+# Metadata
+metadata:
+  musicbrainz:
+    enabled: true
+    rate_limit: 1.0  # seconds between requests
+  tmdb:
+    enabled: true
+    api_key: ""  # Gratuita, da ottenere su themoviedb.org
+    
+# Machine Learning
+ml:
+  enabled: true
+  confidence_threshold: 0.75
+  retrain_interval: 100  # number of processed files
+  italian_music_boost: 1.2  # boost confidence for detected Italian music
+
+# Review System
+review:
+  enabled: true
+  confidence_threshold: 0.75
+  auto_approve_above: 0.95
+
+# USB Management
+usb:
+  enabled: true
+  auto_detect: true
+  cache_enabled: true
+  resume_on_reconnect: true
+
+# Backup
+backup:
+  auto_commit: true
+  commit_interval: 10  # number of processed files
+  auto_push: true
+  push_interval: 50  # number of processed files
